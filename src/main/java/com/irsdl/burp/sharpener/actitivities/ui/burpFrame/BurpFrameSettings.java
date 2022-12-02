@@ -11,7 +11,7 @@ import com.irsdl.burp.generic.BurpTitleAndIcon;
 import com.irsdl.burp.sharpener.SharpenerSharedParameters;
 import com.irsdl.burp.sharpener.objects.PreferenceObject;
 import com.irsdl.burp.sharpener.objects.StandardSettings;
-import com.irsdl.generic.UIHelper;
+//import com.irsdl.generic.UIHelper;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.Collection;
 
 public class BurpFrameSettings extends StandardSettings {
 
-    private BurpFrameListeners burpFrameListeners;
+//    private BurpFrameListeners burpFrameListeners;
 
     public BurpFrameSettings(SharpenerSharedParameters sharedParameters) {
         super(sharedParameters);
@@ -92,7 +92,7 @@ public class BurpFrameSettings extends StandardSettings {
         }
 
         boolean useLastScreenPositionAndSize = sharedParameters.preferences.safeGetBooleanSetting("useLastScreenPositionAndSize");
-        boolean detectOffScreenPosition = sharedParameters.preferences.safeGetBooleanSetting("detectOffScreenPosition");
+//        boolean detectOffScreenPosition = sharedParameters.preferences.safeGetBooleanSetting("detectOffScreenPosition");
 
         if(useLastScreenPositionAndSize){
             Point lastApplicationPosition = sharedParameters.preferences.safeGetSetting("lastApplicationPosition", null);
@@ -107,16 +107,16 @@ public class BurpFrameSettings extends StandardSettings {
             }
         }
 
-        burpFrameListeners = new BurpFrameListeners(sharedParameters);
+//        burpFrameListeners = new BurpFrameListeners(sharedParameters);
     }
 
     @Override
     public void unloadSettings() {
         sharedParameters.printDebugMessage("reset Burp title and icon");
 
-        if(burpFrameListeners!=null){
-            burpFrameListeners.removeBurpFrameListener(sharedParameters.get_mainFrame());
-        }
+//        if(burpFrameListeners!=null){
+//            burpFrameListeners.removeBurpFrameListener(sharedParameters.get_mainFrame());
+//        }
 
         // reset Burp title and icon
         BurpTitleAndIcon.resetTitle(sharedParameters);
